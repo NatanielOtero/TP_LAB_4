@@ -5,35 +5,43 @@
        
         <div class="ui-g"  style="text-align: center;background-color: blueviolet">
           <div class="ui-g-12 banner stroke" style="font-size: 350%" >Bienvenido a Sala de juegos</div> 
-          <div class="ui-g-12" style="background: whitesmoke"></div>  
+          <div class="ui-g-12" style="background: black"></div>  
           <div class="container" style="margin-top: 5%;margin-bottom: 5%;">
 
-        
-              <div class="ui-g-6" style="font-size: 150%;background-color:whitesmoke">
+            <div class="ui-g ui-fluid">
+              <div class="ui-g-6" style="font-size: 150%;background-color:black">
                   <p-card>
                       <p-header>
                         Ya sos usuario?
                       </p-header>
-                      Ingresá a tu cuenta para acceder a  los juegos
+                      Ingresa a tu cuenta para acceder a los juegos
+                      <p-dialog autoAlign="true" modal="true" focusOnShow="false" header="Iniciar Sesión" [(visible)]="displayLogin">
+                        <app-login></app-login>
+                    </p-dialog>                
+                    
                       <p-footer>
-                          <button mat-raised-button routerLink="Login" color="primary">Iniciar Sesión</button>
+                          
+                        <button mat-raised-button color="primary"  (click)="showLogin()"  label="Show">Iniciar Sesión</button>
                       </p-footer>
                   </p-card>
               </div>
-              <div class="ui-g-6"  style="font-size: 150%;background-color:whitesmoke">
+              <div class="ui-g-6"  style="font-size: 150%;background-color:black">
                   <p-card>
                       <p-header>
                         Todavia no sos usuario?
                       </p-header>
-                     Primera vez en la página?, no dudes en registrate, es simple y rápido
+                     Primera vez en la página?, no dudes en registrarte, es simple y rápido
+                     <p-dialog autoAlign="true" modal="true" focusOnShow="false" header="Registrarse" [(visible)]="displayRegistro">
+                         <app-registro></app-registro>
+                         </p-dialog>
                       <p-footer>
-                          <button mat-raised-button color="primary" >Registrarse</button>
+                            <button mat-raised-button color="primary"  (click)="showRegistro()"  label="Show">Registrarse</button>
                       </p-footer>
                   </p-card>
               </div>
-             
+             </div>
           </div>
       </div>
-      <div class="ui-g-12" style="background: whitesmoke"></div>  
+      <div class="ui-g-12" style="background: black"></div>  
     </div>
 

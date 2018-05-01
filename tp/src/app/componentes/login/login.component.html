@@ -4,17 +4,29 @@
    
    
     <div class="container" style="background: whitesmoke; margin-top: 5%;margin-bottom: 5%;">
-      <div class="ui-g-12"  style="font-size: 150%;background-color:whitesmoke;text-align: center">
-        <p-card>
-            <p-header>
-              Iniciar Sesión
-            </p-header>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut nihil quaerat incidunt illum tempore sint cupiditate, ullam, eius, iure ea cum! Sapiente reiciendis distinctio exercitationem, temporibus accusantium in voluptas unde?
-            <p-footer>
-                <button mat-raised-button color="primary" (click)="Login()">Iniciar sesión</button>
-                <button mat-raised-button routerLink="" color="warn">SALIR</button>
-            </p-footer>
-        </p-card>
+      <div class="ui-g-12"  style="font-size: 150%;text-align: center">
+      
+            <div class="container">
+                <div class="ui-g-12 ui-md-12" style="text-align: center">
+                    <div class="ui-inputgroup">
+                        
+                        <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" pInputText placeholder="Usuario">  
+                     
+                        
+                        <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
+                        <input type="password" placeholder="Contraseña"  [(ngModel)]="pass"/> 
+                            
+                    </div> 
+                </div>                
+            </div>
+    <div class="container ui-g-12" style="text-align: center">
+            <button mat-raised-button color="primary" (click)="Login()">Iniciar sesión</button>
+    </div>
+               
+                
+           
+      
     </div>
   
 

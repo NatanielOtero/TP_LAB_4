@@ -4,6 +4,9 @@ import {MenubarModule} from 'primeng/menubar';
 import {CardModule} from 'primeng/card';
 import {CarouselModule} from 'primeng/carousel';
 import {TabMenuModule} from 'primeng/tabmenu';
+import {DialogModule} from 'primeng/dialog';
+import {PasswordModule} from 'primeng/password';
+
 
 @NgModule({
   imports: [
@@ -11,14 +14,18 @@ import {TabMenuModule} from 'primeng/tabmenu';
     MenubarModule,
     CardModule,
     CarouselModule,
-    TabMenuModule
+    TabMenuModule,
+    DialogModule,
+    PasswordModule
     
   ],
   exports:[
     MenubarModule,
     CardModule,
     CarouselModule,
-    TabMenuModule 
+    TabMenuModule ,
+    DialogModule,
+    PasswordModule
   ],
   declarations: []
 })

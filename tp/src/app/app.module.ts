@@ -14,6 +14,7 @@ import { DatosComponent } from './componentes/datos/datos.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { ErrorComponent } from './componentes/error/error.component';
 import { MenuJuegosComponent } from './componentes/menu-juegos/menu-juegos.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -28,13 +29,15 @@ import { MenuJuegosComponent } from './componentes/menu-juegos/menu-juegos.compo
     DatosComponent,
     PrincipalComponent,
     ErrorComponent,
-    MenuJuegosComponent
+    MenuJuegosComponent,
+  
   ],
   imports: [
     BrowserModule,
     MaterialModuleModule,
     PrimeModuleModule,
-    RuteoModuleModule    
+    RuteoModuleModule,
+    FormsModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
