@@ -8,12 +8,15 @@ import { CabeceraComponent } from '../../componentes/cabecera/cabecera.component
 import { DatosComponent } from '../../componentes/datos/datos.component';
 import { PrincipalComponent } from "../../componentes/principal/principal.component";
 import { ErrorComponent } from "../../componentes/error/error.component";
+import { MenuJuegosComponent } from '../../componentes/menu-juegos/menu-juegos.component';
 
 const MiRuteo = [
   {path: '' , component: PrincipalComponent},
-  {path: 'Login' , component: LoginComponent}, 
+  {path: 'Login' , component: LoginComponent},  
   {path: 'Registro' , component: RegistroComponent},
   {path: 'Principal' , component: PrincipalComponent}, 
+  {path: 'Menu' , component: MenuComponent}, 
+  {path: 'MenuJuegos' , component: MenuJuegosComponent}, 
   {path: '**' , component: ErrorComponent},
   {path: 'error' , component: ErrorComponent}];
 

@@ -13,6 +13,7 @@ import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { DatosComponent } from './componentes/datos/datos.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { ErrorComponent } from './componentes/error/error.component';
+import { MenuJuegosComponent } from './componentes/menu-juegos/menu-juegos.component';
 
 
 
@@ -26,7 +27,8 @@ import { ErrorComponent } from './componentes/error/error.component';
     CabeceraComponent,
     DatosComponent,
     PrincipalComponent,
-    ErrorComponent
+    ErrorComponent,
+    MenuJuegosComponent
   ],
   imports: [
     BrowserModule,

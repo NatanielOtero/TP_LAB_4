@@ -22,7 +22,9 @@
         "styles.css",
         "../node_modules/font-awesome/css/font-awesome.min.css",
         "../node_modules/primeng/resources/themes/darkness/theme.css",
-        "../node_modules/primeng/resources/primeng.min.css"
+        "../node_modules/primeng/resources/primeng.min.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.css"
+       
 
       ],
       "scripts": [],

@@ -17,17 +17,11 @@ export class CabeceraComponent implements OnInit {
 
     ngOnInit() {
         this.items = [
-            {
-                label: 'Juegos',
-                items: [
-                  {label: 'Adivina el Numero'},
-                  {label: 'Agilidad Aritmetica'},     
-                  {label: 'Piedra Papel Tijera'},
-                  {label: 'TaTeTi'},
-                  {label: 'Blackjack'},                   
-                                    
-                ]
-            }            
+            {label: 'Adivina', icon: 'fa-bar-chart'},
+            {label: 'Agilidad', icon: 'fa-calendar'},
+            {label: 'Piedra Papel tijera', icon: 'fa-book'},
+            {label: 'TaTeTi', icon: 'fa-support'},
+            {label: 'Blackjack', icon: 'fa-twitter'}
         ];
         this.items2 = [
             {
