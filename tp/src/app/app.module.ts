@@ -15,9 +15,20 @@ import { PrincipalComponent } from './componentes/principal/principal.component'
 import { ErrorComponent } from './componentes/error/error.component';
 import { MenuJuegosComponent } from './componentes/menu-juegos/menu-juegos.component';
 import { FormsModule } from '@angular/forms';
+import { MiFirebaseService } from './servicios/mi-firebase.service';
+
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuthModule} from 'angularfire2/auth';
 
 
-
+const config = {
+  apiKey: "AIzaSyBdZQqwfomKDBdD4huu-Rhn06s5sQ-RSPw",
+  authDomain: "tp-saladejuegos.firebaseapp.com",
+  databaseURL: "https://tp-saladejuegos.firebaseio.com",
+  projectId: "tp-saladejuegos",
+  storageBucket: "tp-saladejuegos.appspot.com",
+  messagingSenderId: "338133003717"
+};
 
 @NgModule({
   declarations: [
@@ -37,9 +48,11 @@ import { FormsModule } from '@angular/forms';
     MaterialModuleModule,
     PrimeModuleModule,
     RuteoModuleModule,
-    FormsModule  
+    FormsModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(config),  
   ],
-  providers: [],
+  providers: [MiFirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MiFirebaseService } from '../../servicios/mi-firebase.service';
+import { ActivatedRoute, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-juegos',
@@ -9,10 +11,12 @@ export class MenuJuegosComponent implements OnInit {
 
 
   cars: any[];
-
+  isLogged : boolean = false;
+  nombreUsuario : string;
+  emailUsuario : string;
   msgs: any[];
 
-  constructor() {
+  constructor(private auth : MiFirebaseService, public routes : ActivatedRoute, public router : Router) {
       this.msgs = [];
       this.cars = [
           {vin: 'r3278r2', year: 2010, brand: 'Audi', color: 'Black'},
@@ -25,7 +29,24 @@ export class MenuJuegosComponent implements OnInit {
       ];
   }
 
+  
+
   ngOnInit()
-  {}
+  {
+    this.auth.getAuth().subscribe( user =>{
+          if(user)
+          {
+            this.isLogged=true;
+            this.nombreUsuario = user.displayName;
+            this.emailUsuario = user.email;
+          }
+          else
+          {
+            this.isLogged = false;
+            this.router.navigate(['/']);
+          }
+
+      })
+  }
 
 }

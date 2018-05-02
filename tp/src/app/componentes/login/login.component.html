@@ -1,21 +1,24 @@
+<div class="container">
 
-<div class="container banner stroke">
+
+
+<div class=" banner ">
        
    
    
-    <div class="container" style="background: whitesmoke; margin-top: 5%;margin-bottom: 5%;">
+    
       <div class="ui-g-12"  style="font-size: 150%;text-align: center">
       
             <div class="container">
                 <div class="ui-g-12 ui-md-12" style="text-align: center">
                     <div class="ui-inputgroup">
                         
-                        <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" pInputText placeholder="Usuario">  
+                        <span class="ui-inputgroup-addon"><i class="fa fa-at"></i></span>
+                        <input type="text" name="email" pInputText placeholder="Email" [(ngModel)]="usuario.email">  
                      
                         
                         <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
-                        <input type="password" placeholder="Contraseña"  [(ngModel)]="pass"/> 
+                        <input type="password" placeholder="Contraseña"  [(ngModel)]="usuario.pass"/> 
                             
                     </div> 
                 </div>                
@@ -38,3 +41,6 @@
 </div>
 
 
+<p-dialog header="Error" [(visible)]="display">
+    {{errorMsg}}
+</p-dialog>
