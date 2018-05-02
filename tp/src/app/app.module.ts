@@ -20,6 +20,7 @@ import { MiFirebaseService } from './servicios/mi-firebase.service';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import { CargandoComponent } from './componentes/cargando/cargando.component';
+import { NgStyle, CommonModule } from '@angular/common';
 
 
 const config = {
@@ -46,11 +47,12 @@ const config = {
   
   ],
   imports: [
+    CommonModule,    
     BrowserModule,
     MaterialModuleModule,
     PrimeModuleModule,
     RuteoModuleModule,
-    FormsModule,
+    FormsModule,   
     AngularFireAuthModule,
     AngularFireModule.initializeApp(config),  
   ],

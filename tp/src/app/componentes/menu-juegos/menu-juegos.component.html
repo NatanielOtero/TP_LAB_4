@@ -1,15 +1,18 @@
 <app-cabecera>  </app-cabecera>
 
 <div class="container" style="width: 50%;height: 300%;margin-top: 5%">
-<p-carousel  headerText="Juegos" circular="circular" autoplayInterval="5000" numVisible="1" [value]="cars">
-    <ng-template let-car pTemplate="item">
+<p-carousel  headerText="Juegos" circular="circular" autoplayInterval="5000" numVisible="1" [value]="juegos">
+    <ng-template let-juego pTemplate="item">
         <div class="ui-g-12"  style="font-size: 150%;background-color:darkslateblue;text-align: center;">
             <p-card >
                 <p-header  >
-                   Juego 
+                 {{juego.name}}
                 </p-header>
-                <div class="container" >
-                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, aperiam. Ab, ea. Rem dolor quo quis tenetur rerum mollitia repudiandae eius, earum voluptatem praesentium nobis? Saepe laudantium quas explicabo optio
+                <div class="container">
+                   <img src="{{juego.img}}">
+
+                   
+                    {{juego.desc}}
                 </div>                 
                 
                 <p-footer style="font-size: 85%">

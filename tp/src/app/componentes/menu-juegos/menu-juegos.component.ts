@@ -10,23 +10,25 @@ import { ActivatedRoute, Routes, Router } from '@angular/router';
 export class MenuJuegosComponent implements OnInit {
 
 
-  cars: any[];
+  juegos: any[];
   isLogged : boolean = false;
   nombreUsuario : string;
   emailUsuario : string;
   msgs: any[];
-
+  
   constructor(private auth : MiFirebaseService, public routes : ActivatedRoute, public router : Router) {
       this.msgs = [];
-      this.cars = [
-          {vin: 'r3278r2', year: 2010, brand: 'Audi', color: 'Black'},
-          {vin: 'jhto2g2', year: 2015, brand: 'BMW', color: 'White'},
-          {vin: 'h453w54', year: 2012, brand: 'Honda', color: 'Blue'},
-          {vin: 'g43gwwg', year: 1998, brand: 'Renault', color: 'White'},
-          {vin: 'gf45wg5', year: 2011, brand: 'VW', color: 'Red'}
+      this.juegos = [
+          {name: 'Adivina el numero', desc: "Adivina el numero secreto, Crees que podras?",img : "url(../../../assets/images/adivina.png)"},
+          {name: 'Agilidad Aritmetica', desc: "Resuelve las operaciones en el menor tiempo posible, Acepta el desafio",img : "url(../../../assets/images/adiniva.png" },
+          {name: 'Anagrama', desc: "Descifra la palabra desordenada",img : "url(../../../assets/images/adiniva.png"},
+          {name: 'Piedra papel tijera', desc: "Juega contra la maquina en este clasico juego",img : "url(../../../assets/images/adiniva.png"},
+          {name: 'TaTeTi', desc: "Logra marcar 3 en linea para ganar",img : "url(../../../assets/images/adiniva.png"},
+          {name: 'BlackJack', desc: "Prueba tu suerte en este juego de cartas",img : "url(../../../assets/images/adiniva.png"},
           
           
       ];
+      console.log(this.juegos);
   }
 
   
