@@ -19,6 +19,7 @@ import { MiFirebaseService } from './servicios/mi-firebase.service';
 
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
+import { CargandoComponent } from './componentes/cargando/cargando.component';
 
 
 const config = {
@@ -41,6 +42,7 @@ const config = {
     PrincipalComponent,
     ErrorComponent,
     MenuJuegosComponent,
+    CargandoComponent,
   
   ],
   imports: [

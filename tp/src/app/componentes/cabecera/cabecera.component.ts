@@ -23,6 +23,7 @@ export class CabeceraComponent implements OnInit {
     }
     ngOnInit() {
 
+
         this.items = [
             {label: 'Adivina', icon: 'fa-bar-chart'},
             {label: 'Agilidad', icon: 'fa-calendar'},

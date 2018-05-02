@@ -6,7 +6,8 @@ import {CarouselModule} from 'primeng/carousel';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {DialogModule} from 'primeng/dialog';
 import {PasswordModule} from 'primeng/password';
-
+import {ProgressBarModule} from 'primeng/progressbar';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 @NgModule({
   imports: [
@@ -16,7 +17,9 @@ import {PasswordModule} from 'primeng/password';
     CarouselModule,
     TabMenuModule,
     DialogModule,
-    PasswordModule
+    PasswordModule,
+    ProgressBarModule,
+    ProgressSpinnerModule
     
   ],
   exports:[
@@ -25,7 +28,9 @@ import {PasswordModule} from 'primeng/password';
     CarouselModule,
     TabMenuModule ,
     DialogModule,
-    PasswordModule
+    PasswordModule,
+    ProgressBarModule,
+    ProgressSpinnerModule
   ],
   declarations: []
 })
