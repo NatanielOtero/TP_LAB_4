@@ -1,1 +1,75 @@
 <app-cabecera> </app-cabecera>
+<mat-toolbar color="accent">
+    <mat-toolbar-row>
+        <span>Jugador : {{nombreJugador}}</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="container" style="background-color: whitesmoke">
+    <button type="text" (click)="showDialog()" pButton icon="fa-question-circle" label="Reglas"></button>
+    <p-dialog header="Blackjack" [(visible)]="display">
+      
+        <p>El objetivo del juego es sumar 21 , al pasarse de 21 se pierde la partida. <br> Al inicio se reciben 2 cartas, se puede pedir una más o cortar, al cortar se muestra cual hubiera sido el resultado si se hubiera pedido otra carta.
+        </p>      
+    </p-dialog>
+    <!-- Modal -->
+    
+        
+
+        
+   
+    <div [hidden]="jugo">
+        <button mat-button (click)="jugar()">Jugar</button>
+    </div>
+
+
+    <div [hidden]="jugando">
+        <button mat-button (click)="mas()">Pedir Otra carta</button>
+    </div>
+    <div [hidden]="jugando">
+        <button mat-button (click)="cortar()">Cortar</button>
+    </div>
+    <div [hidden]="nuevo">
+        <button mat-button (click)="jugar()">Nuevo juego ?</button>
+    </div>
+
+
+
+    <div [hidden]="mostrar">
+
+
+        <div style="width:95%" class="alert alert-info animated shake">
+            <strong>Sus cartas son:</strong>
+        </div>
+        <div>
+            <div>
+                <ng-container *ngFor="let item of juego.cartas">
+                    <td><img src="assets/images/{{item}}.jpg" alt=""></td>
+                </ng-container>
+
+
+            </div>
+
+
+
+        </div>
+        <div [hidden]="corto">
+
+
+            <div style="width:95%" [hidden]="resultado != 'gano'" class="alert alert-success animated shake">
+                 <strong>{{resultado}}!</strong>
+            </div>
+            <div style="width:95%" [hidden]="resultado == 'gano' || resultado == 'perdio'" class="alert alert-info animated shake">
+                 <strong>{{resultado}}!</strong> <img src="assets/images/{{juego.numero}}.jpg" alt="">
+            </div>
+            <div style="width:95%" [hidden]="resultado != 'perdio'" class="alert alert-danger animated shake">
+                 <strong>{{resultado}}!</strong>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>

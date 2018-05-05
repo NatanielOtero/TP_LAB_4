@@ -137,7 +137,7 @@ export class AdivinaComponent implements OnInit {
 
   ngOnInit() {
     this.auth.getAuth().subscribe( user =>{
-      let mail = user.email;
+      let mail = user.email;      
       let splitted = mail.split("@",1);
       this.nombreJugador = splitted[0];
     });
