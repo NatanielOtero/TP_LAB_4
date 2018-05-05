@@ -12,22 +12,25 @@ export class LoginComponent implements OnInit {
   display: boolean = false;
   usuario : Usuario;
   errorMsg : string = "";
+  email : string;
+  pass : string;
   
   constructor(private route : ActivatedRoute,private router : Router, private auth : MiFirebaseService) {
-    this.usuario = new Usuario();
+    
    }
 
   Login()
   {
-    if(this.usuario.email == null || this.usuario.pass == null)
+    if(this.email == null || this.pass == null)
     {
         this.error("Complete todos los campos");
     }
     else
     {
+      this.usuario = new Usuario(this.email,this.pass);
       this.auth.logear(this.usuario)
       .then((res) => {console.log(res),
-      this.router.navigate(['/MenuJuegos']);
+      this.router.navigate(['/Menu']);
         })
       .catch((err) => {
         this.error(err.message)

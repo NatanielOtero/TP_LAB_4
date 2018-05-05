@@ -1,17 +1,26 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-      
+<p-menubar [model]="items">
+    <div>
+        <button pButton label="Estadisticas"></button>
+        <button pButton label="Logout" (click)="salir()" icon="fa-sign-out"></button>        
+    </div>
+</p-menubar>
+<!--<mat-toolbar color="primary" >
+  <mat-toolbar-row style="width: 100%">
+      <div class="ui-g-2 ui-md-4">
       <button mat-raised-button  color="accent">ADIVINA EL NUMERO</button>
       <button mat-raised-button  color="accent">AGILIDAD ARITMETICA</button>
       <button mat-raised-button  color="accent">ANAGRAMA</button>
       <button mat-raised-button  color="accent">PIEDRA PAPEL TIJERA</button>
       <button mat-raised-button  color="accent">TA TE TI</button>
       <button mat-raised-button  color="accent">BLACKJACK</button>
-      <span class="example-spacer"></span>
+      </div>  
+      <span class="example-spacer"></span>          
+      <div class="ui-g-2">      
       <button mat-raised-button routerLink="" color="accent">RESULTADOS</button>
       <button mat-raised-button (click)="salir()" routerLink="" color="warn">SALIR</button>
-        <!--<span><p-tabMenu [model]="items"></p-tabMenu></span>   
+      </div>
+        <span><p-tabMenu [model]="items"></p-tabMenu></span>   
     <span class="example-spacer"></span>
-    <span><p-menubar [model]="items2"  ></p-menubar></span>-->  
+    <span><p-menubar [model]="items2"  ></p-menubar></span>
   </mat-toolbar-row>
-</mat-toolbar>
+</mat-toolbar>-->

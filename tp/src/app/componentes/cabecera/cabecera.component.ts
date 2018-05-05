@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import { MiFirebaseService } from '../../servicios/mi-firebase.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cabecera',
@@ -11,7 +12,7 @@ export class CabeceraComponent implements OnInit {
 
   
   
-  constructor(public auth : MiFirebaseService) { }
+  constructor(public auth : MiFirebaseService, public routes : ActivatedRoute,public router : Router) { }
 
   items: MenuItem[];
   items2: MenuItem[];
@@ -20,27 +21,20 @@ export class CabeceraComponent implements OnInit {
     salir()
     {
         this.auth.logOut();
+        this.router.navigate(["/"]);
+        
     }
     ngOnInit() {
 
 
         this.items = [
-            {label: 'Adivina', icon: 'fa-bar-chart'},
-            {label: 'Agilidad', icon: 'fa-calendar'},
-            {label: 'Piedra Papel tijera', icon: 'fa-book'},
-            {label: 'TaTeTi', icon: 'fa-support'},
-            {label: 'Blackjack', icon: 'fa-twitter'}
-        ];
-        this.items2 = [
-            {
-                label: 'Perfil',
-                items: [
-                  {label: 'Records'},
-                  {label: 'Salir'},                        
-                                    
-                ]
-            }
-        ]
+            {label: 'Adivina',routerLink:'/Menu/Adivina' },
+            {label: 'Agilidad',routerLink:'/Menu/Agilidad' },
+            {label: 'Piedra Papel tijera',routerLink:'/Menu/ppt'},
+            {label: 'TaTeTi',routerLink:'/Menu/Tateti' },
+            {label: 'Anagrama',routerLink:'/Menu/Anagrama'},
+            {label: 'Blackjack', routerLink:'/Menu/BlackJack'}              
+        ];       
     }
 
 }

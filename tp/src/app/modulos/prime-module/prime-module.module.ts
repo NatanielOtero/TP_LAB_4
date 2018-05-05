@@ -8,6 +8,8 @@ import {DialogModule} from 'primeng/dialog';
 import {PasswordModule} from 'primeng/password';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import {ButtonModule} from 'primeng/button';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
     DialogModule,
     PasswordModule,
     ProgressBarModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    ButtonModule,
+    TableModule
     
   ],
   exports:[
@@ -30,7 +34,9 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
     DialogModule,
     PasswordModule,
     ProgressBarModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    ButtonModule,
+    TableModule
   ],
   declarations: []
 })

@@ -10,14 +10,29 @@ import { PrincipalComponent } from "../../componentes/principal/principal.compon
 import { ErrorComponent } from "../../componentes/error/error.component";
 import { MenuJuegosComponent } from '../../componentes/menu-juegos/menu-juegos.component';
 import { CargandoComponent } from '../../componentes/cargando/cargando.component';
+import { AdivinaComponent } from '../../componentes/juegos/adivina/adivina.component';
+import { AgilidadComponent } from '../../componentes/juegos/agilidad/agilidad.component';
+import { PptComponent } from '../../componentes/juegos/ppt/ppt.component';
+import { AnagramaComponent } from '../../componentes/juegos/anagrama/anagrama.component';
+import { TatetiComponent } from '../../componentes/juegos/tateti/tateti.component';
+import { BlackjackComponent } from '../../componentes/juegos/blackjack/blackjack.component';
 
 const MiRuteo = [
   {path: '' , component: PrincipalComponent},
   {path: 'Login' , component: LoginComponent},  
   {path: 'Registro' , component: RegistroComponent},
   {path: 'Principal' , component: PrincipalComponent}, 
-  {path: 'Menu' , component: MenuComponent},    
-  {path: 'MenuJuegos' , component: CargandoComponent}, 
+  {path: 'Menu' , component: CargandoComponent ,
+     children:
+    [ {path: '' , component: MenuJuegosComponent},
+      {path:'Adivina',component:AdivinaComponent},
+      {path:'Agilidad',component:AgilidadComponent},
+      {path:'ppt',component:PptComponent},
+      {path:'Anagrama',component:AnagramaComponent},
+      {path:'Tateti',component:TatetiComponent},
+      {path:'BlackJack',component:BlackjackComponent}
+    ]
+  }, 
   {path: '**' , component: ErrorComponent},
   {path: 'error' , component: ErrorComponent}];
 

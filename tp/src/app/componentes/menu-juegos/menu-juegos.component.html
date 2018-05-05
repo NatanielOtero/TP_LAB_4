@@ -1,17 +1,107 @@
-<app-cabecera>  </app-cabecera>
+<p-menubar>
+        <div>
+            <button pButton label="Estadisticas"></button>
+            <button pButton label="Logout" icon="fa-sign-out"></button>        
+        </div>
+</p-menubar>
 
-<div class="container" style="width: 50%;height: 300%;margin-top: 5%">
+<div style="text-align: center;">
+        <div class="ui-g-4 ui-md-6 ui-sm-12 animated fadeInLeft">
+                <p-card title="Adivina el numero" [style]="{width: '100%'}" styleClass="ui-card-shadow">
+                        <p-header>
+                            <img src="Card" src="assets/images/adivina.png">
+                        </p-header>
+                        <div>
+                           Intenta adivinar el numero secreto
+                        </div>
+                        <p-footer>
+                            <button mat-fab color="primary" routerLink='Adivina' >Jugar</button>
+                        </p-footer>
+                    </p-card>
+                    
+        </div>
+        <div class="ui-g-4 ui-md-6 ui-sm-12 animated fadeInRight">
+                <p-card title="Anagrama"  [style]="{width: '100%'}" styleClass="ui-card-shadow">
+                        <p-header>
+                            <img src="Card" src="assets/images/anagramas.jpg">
+                        </p-header>
+                        <div>
+                            Resuelve el anagrama
+                        </div>
+                        <p-footer>
+                             <button mat-fab color="primary" routerLink='Anagrama'>Jugar</button>
+                        </p-footer>
+                    </p-card>
+                    
+        </div>
+        <div class="ui-g-4 ui-md-6 ui-sm-12 animated fadeInLeft">
+                <p-card title="Agilidad aritmetica"  [style]="{width: '100%'}" styleClass="ui-card-shadow">
+                        <p-header>
+                            <img src="Card" src="assets/images/cerebro.jpg">
+                        </p-header>
+                        <div>
+                            Resuelve la mayor cantidad de operaciones 
+                        </div>
+                        <p-footer>
+                            <button mat-fab color="primary" routerLink='Agilidad' >Jugar</button>
+                        </p-footer>
+                    </p-card>
+                    
+        </div>
+        <div class="ui-g-4 ui-md-6 ui-sm-12  animated fadeInRight">
+                <p-card title="BlackJack"  [style]="{width: '100%'}" styleClass="ui-card-shadow">
+                        <p-header>
+                            <img src="Card" src="assets/images/memoria.jpg">
+                        </p-header>
+                            Prueba tu suerte en este juego de cartas
+                        <p-footer>
+                            <button mat-fab color="primary" routerLink='BlackJack' >Jugar</button>
+                        </p-footer>
+                    </p-card>
+                    
+        </div>
+        <div class="ui-g-4 ui-md-6 ui-sm-12 animated fadeInLeft ">
+                <p-card title="Piedra papel tijera "  [style]="{width: '100%'}" styleClass="ui-card-shadow">
+                        <p-header>
+                            <img src="Card" src="assets/images/ppt.jpg">
+                        </p-header>
+                        <div>
+                            Enfrenta a la maquina en este clasico juego
+                        </div>
+                        <p-footer>
+                                <button mat-fab color="primary" routerLink='ppt'  >Jugar</button>
+                        </p-footer>
+                    </p-card>
+                    
+        </div>
+        <div class="ui-g-4 ui-md-6 ui-sm-12 animated fadeInRight">
+                <p-card title="TaTeTi"  [style]="{width: '100%'}" styleClass="ui-card-shadow">
+                        <p-header>
+                            <img src="Card" src="assets/images/tateti.jpg">
+                        </p-header>
+                        <div>
+                            Marca 3 en linea para ganar
+                        </div>
+                        <p-footer>
+                                <button mat-fab color="primary" routerLink='Tateti'  >Jugar</button>
+                        </p-footer>
+                    </p-card>
+                    
+        </div>
+        
+    </div>
+
+<!--
+<div  style="width: 50%;height: 300%;margin-top: 5%">
 <p-carousel  headerText="Juegos" circular="circular" autoplayInterval="5000" numVisible="1" [value]="juegos">
     <ng-template let-juego pTemplate="item">
         <div class="ui-g-12"  style="font-size: 150%;background-color:darkslateblue;text-align: center;">
             <p-card >
-                <p-header  >
+                <p-header>
                  {{juego.name}}
                 </p-header>
                 <div class="container">
-                   <img src="{{juego.img}}">
-
-                   
+                   <img [src]="juego.img" style="width: 100%;height: 100%">                   
                     {{juego.desc}}
                 </div>                 
                 
@@ -23,4 +113,4 @@
     </ng-template>
 </p-carousel>
 
-</div>
+</div>-->

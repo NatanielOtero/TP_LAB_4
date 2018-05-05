@@ -12,9 +12,11 @@ export class RegistroComponent implements OnInit {
   display: boolean = false;
   usuario : Usuario;
   pass2 : string;
+  email : string;
+  pass : string;
   errorMsg : string = "";
   constructor(public auth : MiFirebaseService,private route : ActivatedRoute,private router : Router) { 
-    this.usuario = new Usuario();
+   
   }
 
   ngOnInit() {
@@ -23,23 +25,24 @@ export class RegistroComponent implements OnInit {
 
   Registrar()
   {
-    if(this.usuario.email == null || this.usuario.pass == null || this.pass2 == null)
+    if(this.email == null || this.pass == null || this.pass2 == null)
     {
       this.error("Complete todos los campos !!!");
 
     }
     else
     {
-      if(this.usuario.pass != this.pass2)
+      if(this.pass != this.pass2)
       {
         this.error("Las contraseñas no coinciden");
       }
       else
       {
+        this.usuario = new Usuario(this.email,this.pass);
           this.auth.registrar(this.usuario)
           .then((res)=>{console.log("Bien"),console.log(res);
         
-            this.router.navigate(['/MenuJuegos']);
+            this.router.navigate(['/Menu']);
         })
           .catch((err) => {
             console.log(err);

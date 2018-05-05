@@ -21,6 +21,13 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import { CargandoComponent } from './componentes/cargando/cargando.component';
 import { NgStyle, CommonModule } from '@angular/common';
+import { AdivinaComponent } from './componentes/juegos/adivina/adivina.component';
+import { PptComponent } from './componentes/juegos/ppt/ppt.component';
+import { AgilidadComponent } from './componentes/juegos/agilidad/agilidad.component';
+import { BlackjackComponent } from './componentes/juegos/blackjack/blackjack.component';
+import { AnagramaComponent } from './componentes/juegos/anagrama/anagrama.component';
+import { TatetiComponent } from './componentes/juegos/tateti/tateti.component';
+import { JugadorService } from './servicios/jugador.service';
 
 
 const config = {
@@ -44,6 +51,12 @@ const config = {
     ErrorComponent,
     MenuJuegosComponent,
     CargandoComponent,
+    AdivinaComponent,
+    PptComponent,
+    AgilidadComponent,
+    BlackjackComponent,
+    AnagramaComponent,
+    TatetiComponent,
   
   ],
   imports: [
@@ -56,7 +69,7 @@ const config = {
     AngularFireAuthModule,
     AngularFireModule.initializeApp(config),  
   ],
-  providers: [MiFirebaseService],
+  providers: [MiFirebaseService,JugadorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

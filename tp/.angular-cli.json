@@ -23,7 +23,8 @@
         "../node_modules/font-awesome/css/font-awesome.min.css",
         "../node_modules/primeng/resources/themes/darkness/theme.css",
         "../node_modules/primeng/resources/primeng.min.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../node_modules/animate.css/animate.min.css"
        
 
       ],
