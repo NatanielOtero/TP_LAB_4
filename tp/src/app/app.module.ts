@@ -28,6 +28,7 @@ import { BlackjackComponent } from './componentes/juegos/blackjack/blackjack.com
 import { AnagramaComponent } from './componentes/juegos/anagrama/anagrama.component';
 import { TatetiComponent } from './componentes/juegos/tateti/tateti.component';
 import { JugadorService } from './servicios/jugador.service';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 
 const config = {
@@ -65,11 +66,11 @@ const config = {
     MaterialModuleModule,
     PrimeModuleModule,
     RuteoModuleModule,
-    FormsModule,   
+    FormsModule,     
     AngularFireAuthModule,
     AngularFireModule.initializeApp(config),  
   ],
-  providers: [MiFirebaseService,JugadorService],
+  providers: [MiFirebaseService,JugadorService,AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

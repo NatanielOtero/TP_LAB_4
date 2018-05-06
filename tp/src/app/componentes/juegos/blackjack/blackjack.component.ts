@@ -16,6 +16,7 @@ export class BlackjackComponent implements OnInit {
   jugando : boolean = true;
   corto : boolean = true;
   nuevo : boolean = true;
+  cargando : boolean = false;
   nombreJugador :string;
   constructor(public auth : MiFirebaseService) {
     this.juego = new JuegoPropio();
@@ -30,15 +31,27 @@ export class BlackjackComponent implements OnInit {
   }
   mas()
   {
+
     this.juego.jugar();
+ 
+    this.cargando = true;    
+    const interval = window.setInterval(() => {   
+   
     
-      this.resultado= this.juego.verificarJuego();
-      if(this.resultado == "gano" || this.resultado =="perdio")
-      {
-        this.corto = false;
-        this.jugando = true;
-        this.nuevo = false;
-      }
+       
+        this.resultado= this.juego.verificarJuego();
+        if(this.resultado == "Gano" || this.resultado =="Perdio")
+        {
+          this.corto = false;
+          this.jugando = true;
+          this.nuevo = false;
+          this.guardar();   
+        }
+        this.cargando = false;
+   
+    }, 1000); 
+    
+     
     
     
     console.log(this.juego);
@@ -52,9 +65,10 @@ export class BlackjackComponent implements OnInit {
       this.resultado= this.juego.cortar();
       console.log(this.juego);
       console.log(this.resultado);
+      this.guardar();   
   }
 
-  
+ 
   showDialog()
   {
     this.display = true;
@@ -75,7 +89,8 @@ export class BlackjackComponent implements OnInit {
     {
       this.corto = false;
       this.jugando = true;
-      this.nuevo = false;
+      this.nuevo = false;  
+      this.guardar();    
     }
     console.log(this.juego);
     
@@ -83,4 +98,12 @@ export class BlackjackComponent implements OnInit {
     
   }
 
+  guardar()
+  {
+    this.juego.usuario = this.nombreJugador;
+    this.juego.juego = "BlackJack";
+    console.log(this.juego);
+    this.auth.guardarBlackjack(this.juego);
+
+  }
 }

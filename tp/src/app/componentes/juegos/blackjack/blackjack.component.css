@@ -24,19 +24,7 @@ button {
     width: 100%;
 }
 
-button:hover {
-    opacity: 0.8;
-    -webkit-animation-name: shake;
-    -moz-animation-name: shake;
-    -ms-animation-name: shake;
-    -o-animation-name: shake;
-    animation-name: shake;
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    -ms-animation-duration: 1s;
-    -o-animation-duration: 1s;
-    animation-duration: 1s;
-}
+
 
 .cancelbtn {
     width: auto;

@@ -82,8 +82,10 @@ export class PptComponent implements OnInit {
     }
     this.jugadas++;
     console.log(this.ganadas,this.empatadas,this.perdidas);
+    this.guardar();
     this.habemus = false;
     this.visuales = true;
+    
   }
   public jugar()
   {
@@ -92,5 +94,14 @@ export class PptComponent implements OnInit {
     this.visuales = false;
    
   }
+  guardar()
+  {
+    this.juego.usuario = this.nombreJugador;
+    this.juego.juego = "ppt";
+    console.log(this.juego);
+    this.auth.guardarPuntuaciónPiedraPapelTijera(this.juego);
+
+  }
+
 
 }

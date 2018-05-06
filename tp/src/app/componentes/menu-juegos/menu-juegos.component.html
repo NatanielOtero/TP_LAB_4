@@ -1,9 +1,13 @@
 <p-menubar>
         <div>
+            
+            <label class="alert alert-success"><strong>Hola de nuevo : {{nombreUsuario}}</strong>  </label>
             <button pButton label="Estadisticas"></button>
-            <button pButton label="Logout" icon="fa-sign-out"></button>        
+            <button pButton label="Logout" (click)="salir()" icon="fa-sign-out"></button>        
         </div>
 </p-menubar>
+    
+
 
 <div style="text-align: center;">
         <div class="ui-g-4 ui-md-6 ui-sm-12 animated fadeInLeft">

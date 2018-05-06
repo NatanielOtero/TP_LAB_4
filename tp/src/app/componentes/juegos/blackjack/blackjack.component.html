@@ -4,15 +4,14 @@
         <span>Jugador : {{nombreJugador}}</span>
     </mat-toolbar-row>
 </mat-toolbar>
-<div class="container" style="background-color: whitesmoke">
+<div class="container animated fadeInDown" style="background-color: whitesmoke">
     <button type="text" (click)="showDialog()" pButton icon="fa-question-circle" label="Reglas"></button>
     <p-dialog header="Blackjack" [(visible)]="display">
       
         <p>El objetivo del juego es sumar 21 , al pasarse de 21 se pierde la partida. <br> Al inicio se reciben 2 cartas, se puede pedir una más o cortar, al cortar se muestra cual hubiera sido el resultado si se hubiera pedido otra carta.
         </p>      
     </p-dialog>
-    <!-- Modal -->
-    
+    <!-- Modal -->   
         
 
         
@@ -28,9 +27,7 @@
     <div [hidden]="jugando">
         <button mat-button (click)="cortar()">Cortar</button>
     </div>
-    <div [hidden]="nuevo">
-        <button mat-button (click)="jugar()">Nuevo juego ?</button>
-    </div>
+    
 
 
 
@@ -40,36 +37,68 @@
         <div style="width:95%" class="alert alert-info animated shake">
             <strong>Sus cartas son:</strong>
         </div>
-        <div>
-            <div>
+        <div  class="ui-g" style="background-color: whitesmoke">
+           
                 <ng-container *ngFor="let item of juego.cartas">
-                    <td><img src="assets/images/{{item}}.jpg" alt=""></td>
+                        <div class="ui-g-3" >
+                                <td><img src="assets/images/{{item}}.jpg" alt=""></td>
+                        </div>
+                           
+                   
+                    
                 </ng-container>
 
 
-            </div>
-
-
+   
+          
+            
 
         </div>
-        <div [hidden]="corto">
-
-
-            <div style="width:95%" [hidden]="resultado != 'gano'" class="alert alert-success animated shake">
-                 <strong>{{resultado}}!</strong>
-            </div>
-            <div style="width:95%" [hidden]="resultado == 'gano' || resultado == 'perdio'" class="alert alert-info animated shake">
-                 <strong>{{resultado}}!</strong> <img src="assets/images/{{juego.numero}}.jpg" alt="">
-            </div>
-            <div style="width:95%" [hidden]="resultado != 'perdio'" class="alert alert-danger animated shake">
-                 <strong>{{resultado}}!</strong>
-            </div>
-        </div>
-
-
-
-
-
-
+           
 
     </div>
+
+    <p-dialog  [closable]="true" header="Fin del juego" [(visible)]="!corto">
+      
+                    
+            <div style="width:95%" [hidden]="resultado != 'Gano'" >
+                <div class="alert alert-success animated shake">
+                        <strong>{{resultado}}!</strong> 
+                         <div [hidden]="nuevo">
+                                <button mat-button (click)="jugar()">Nuevo juego ?</button>
+                            </div>   
+                            Sus cartas: 
+                </div>                    
+                   
+                    <ng-container *ngFor="let item of juego.cartas">
+                            <div class="ui-g-3" >
+                                    <td><img src="assets/images/{{item}}.jpg" alt=""></td>
+                            </div>
+                               
+                       
+                        
+                    </ng-container>
+               </div>
+               <div  style="width:95%;font-size: 90%"  [hidden]="resultado == 'Gano' || resultado == 'Perdio'" class="alert alert-info animated shake">
+                    <strong>{{resultado}}!</strong><br> <div [hidden]="nuevo">
+                            <button mat-button (click)="jugar()">Nuevo juego ?</button>
+                        </div>   <br>
+                     <img src="assets/images/{{juego.numero}}.jpg" alt="">
+
+               </div>
+               <div style="width:95%" [hidden]="resultado != 'Perdio'" class="alert alert-danger animated shake">
+                    <strong>{{resultado}}!</strong> <div [hidden]="nuevo">
+                            <button mat-button (click)="jugar()">Nuevo juego ?</button>
+                        </div>   
+               </div> 
+               
+               
+           
+        </p-dialog>
+
+        <p-dialog [showHeader]=false [closable]=false [(visible)]="cargando">
+                <div style="text-align: center">
+                    <p-progressSpinner></p-progressSpinner>
+                </div>
+               
+            </p-dialog>

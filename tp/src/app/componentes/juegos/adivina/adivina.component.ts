@@ -13,7 +13,7 @@ import { JuegoAdivina } from '../../../clases/juego-adivina';
 })
 export class AdivinaComponent implements OnInit {
   nombreJugador : string;
-  nuevoJuego: JuegoAdivina = new JuegoAdivina();;
+  nuevoJuego: JuegoAdivina = new JuegoAdivina();
   Mensajes : string;
   ocultarVerificar : boolean = false;
 
@@ -26,8 +26,10 @@ export class AdivinaComponent implements OnInit {
   {
    
     (<HTMLInputElement>document.getElementById("numeroIngresado")).disabled = false;
+    this.nuevoJuego.usuario = this.nombreJugador;
     this.nuevoJuego.generarNumero();
     this.ocultarVerificar = false;
+    
   }
 
   verificar()
@@ -47,6 +49,7 @@ export class AdivinaComponent implements OnInit {
         this.MostrarMensaje("¡Felicitaciones adivinaste el numero secreto!, era: "+this.nuevoJuego.numeroSecreto,this.nuevoJuego.resultado);
         this.ocultarVerificar = true;
         //Acá reiniciar el juego
+        this.auth.guardarPuntuacionAdivina(this.nuevoJuego);
       
       }
       else
@@ -90,6 +93,7 @@ export class AdivinaComponent implements OnInit {
         {
           this.MostrarMensaje("Se te acabaron los 10 intentos, ¡perdiste!",this.nuevoJuego.resultado);
           this.ocultarVerificar = true;
+          this.auth.guardarPuntuacionAdivina(this.nuevoJuego);
           (<HTMLInputElement>document.getElementById("numeroIngresado")).disabled = false;
         }
 
@@ -129,6 +133,7 @@ export class AdivinaComponent implements OnInit {
   {
     
     this.nuevoJuego = new JuegoAdivina();
+    this.nuevoJuego.usuario = this.nombreJugador;
     this.nuevoJuego.numeroIngresado = null;
     (<HTMLInputElement>document.getElementById("numeroIngresado")).disabled = true;
   }
@@ -142,6 +147,7 @@ export class AdivinaComponent implements OnInit {
       this.nombreJugador = splitted[0];
     });
     this.nuevoJuego.numeroIngresado = null;
+    this.nuevoJuego.usuario = this.nombreJugador;
     (<HTMLInputElement>document.getElementById("numeroIngresado")).disabled = true;
   }
 

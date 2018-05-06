@@ -4,7 +4,7 @@
             <span>Jugador : {{nombreJugador}}</span>
         </mat-toolbar-row>
     </mat-toolbar>
-<div class="container" style="text-align: center;background-color: whitesmoke;margin-top: 5%">
+<div class="container animated fadeInLeft" style="text-align: center;background-color: whitesmoke;margin-top: 5%">
    
         <br>
     <form name="juego">
@@ -47,7 +47,7 @@
 
     <p-dialog header="Fin del juego" [(visible)]="display" [width]="300">
             <div class="alert alert-info" style="font-size: 150%; text-align: center">
-                   <strong>Termino el juego</strong>, sumaste :{{nuevoJuego.cantAciertos}}puntos
+                   <strong>Termino el juego</strong><br>Cantidad de aciertos: {{nuevoJuego.cantAciertos}} / {{nuevoJuego.cantCuentas}}
                   </div>
     </p-dialog>
    

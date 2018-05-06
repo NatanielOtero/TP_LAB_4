@@ -31,15 +31,20 @@ export class MenuJuegosComponent implements OnInit {
       console.log(this.juegos);
   }
 
-  
+  salir()
+  {
+    this.auth.logOut();
+  }
 
   ngOnInit()
   {
     this.auth.getAuth().subscribe( user =>{
           if(user)
           {
-            this.isLogged=true;
-            this.nombreUsuario = user.displayName;
+            let mail = user.email;
+            let splitted = mail.split("@",1);
+            this.nombreUsuario = splitted[0];
+            this.isLogged=true;           
             this.emailUsuario = user.email;
           }
           else

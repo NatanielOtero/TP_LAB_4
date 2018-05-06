@@ -5,13 +5,18 @@
     </mat-toolbar-row>
 </mat-toolbar>
 
-    <div class="container" style="text-align:center ;background-color: whitesmoke; margin-top: 5%">
+    <div class="container animated fadeInUp" style="text-align:center ;background-color: whitesmoke; margin-top: 5%">
      
+
             <div style="border: 10px solid #f1f1f1;
             padding: 10px;
             background:whitesmoke;">
                 <br>
                 <br>
+                <div [hidden]="!mostrar">
+                    <h5>Pulsa generar palabra para jugar</h5>
+
+                </div>
                 <div [hidden]="mostrar">
 
                

@@ -92,6 +92,8 @@ export class AgilidadComponent implements OnInit {
 
   terminarJuego()
   {
+    this.nuevoJuego.usuario = this.nombreJugador;
+    this.auth.guardarPuntuaciónAgilidad(this.nuevoJuego);
       this.display = true;
   }
 

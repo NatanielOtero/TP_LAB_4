@@ -69,6 +69,7 @@ export class AnagramaComponent implements OnInit {
         clearInterval(this.repetidor);
         this.Tiempo = 0;
         this.esconderBotones = true;
+        this.guardar();
       }
       else
       {
@@ -89,8 +90,15 @@ export class AnagramaComponent implements OnInit {
     this.Tiempo = 0;
     this.esconderBotones = true;
     this.resultado = "Rindió";
+    this.guardar();
   }
-  
+
+  guardar()
+  {
+    this.nuevoJuego.usuario = this.nombreJugador;
+    console.log(this.nuevoJuego);
+    this.auth.guardarPuntuaciónAnagrama(this.nuevoJuego);
+  }
 
   volver()
   {
