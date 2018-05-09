@@ -4,10 +4,10 @@ export class JuegoPiedraPapelTijera extends Juego {
    public numeroSecreto: number = 0;
    public   numeroIngresado = 0;
    public    resultado: any;
-    constructor(nombre?: string, gano?: any, jugador?: any) {
-        super("Piedra Papel Tijera", gano, jugador);
+    constructor(nombre?: string, Ganó?: any, jugador?: any) {
+        super("Piedra Papel Tijera", Ganó, jugador);
 
-        this.numeroSecreto = Math.floor((Math.random() * 3) + 1);
+        this.numeroSecreto = Math.floor((Math.random() * 90) + 1);
 
     }
     /**
@@ -16,38 +16,50 @@ export class JuegoPiedraPapelTijera extends Juego {
      *  3 = tijeras 
      */
     jugar() {
+        if(this.numeroSecreto <= 30)
+        {
+            this.numeroSecreto = 1;
+        }
+        if(this.numeroSecreto > 30 && this.numeroSecreto <= 60)
+        {
+            this.numeroSecreto = 2;
+        }
+        if(this.numeroSecreto > 60)
+        {
+            this.numeroSecreto = 3;
+        }
         switch (this.numeroSecreto) {
             case 1:
                 if (this.numeroIngresado == 2) {
-                    this.resultado = "gano";
+                    this.resultado = "Ganó";
                 }
                 if (this.numeroIngresado == 3) {
-                    this.resultado = "perdio";
+                    this.resultado = "Perdió";
                 }
                 if (this.numeroIngresado == 1) {
-                    this.resultado = "empato";
+                    this.resultado = "Empató";
                 }
                 break;
             case 2:
                 if (this.numeroIngresado == 2) {
-                    this.resultado = "empato";
+                    this.resultado = "Empató";
                 }
                 if (this.numeroIngresado == 3) {
-                    this.resultado = "gano";
+                    this.resultado = "Ganó";
                 }
                 if (this.numeroIngresado == 1) {
-                    this.resultado = "perdio";
+                    this.resultado = "Perdió";
                 }
                 break;
             case 3:
                 if (this.numeroIngresado == 2) {
-                    this.resultado = "perdio";
+                    this.resultado = "Perdió";
                 }
                 if (this.numeroIngresado == 3) {
-                    this.resultado = "empato";
+                    this.resultado = "Empató";
                 }
                 if (this.numeroIngresado == 1) {
-                    this.resultado = "gano";
+                    this.resultado = "Ganó";
                 }
                 break;
             default:

@@ -31,6 +31,7 @@ export class CargandoComponent implements OnInit {
       }
       else
       {
+       
         this.Display  = true;
         this.isLogged = true;
         this.router.navigate(['/']);

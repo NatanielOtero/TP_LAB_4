@@ -30,7 +30,8 @@ const MiRuteo = [
       {path:'ppt',component:PptComponent},
       {path:'Anagrama',component:AnagramaComponent},
       {path:'Tateti',component:TatetiComponent},
-      {path:'BlackJack',component:BlackjackComponent}
+      {path:'BlackJack',component:BlackjackComponent},
+      {path:'Estadisticas',component:DatosComponent}
     ]
   }, 
   {path: '**' , component: ErrorComponent},

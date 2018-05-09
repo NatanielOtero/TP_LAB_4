@@ -24,6 +24,10 @@ export class CabeceraComponent implements OnInit {
         this.router.navigate(["/"]);
         
     }
+    est()
+    {
+        this.router.navigate(["/Menu/Estadisticas"]);
+    }
     ngOnInit() {
 
 

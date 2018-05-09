@@ -35,6 +35,10 @@ export class MenuJuegosComponent implements OnInit {
   {
     this.auth.logOut();
   }
+  est()
+    {
+        this.router.navigate(["/Menu/Estadisticas"]);
+    }
 
   ngOnInit()
   {

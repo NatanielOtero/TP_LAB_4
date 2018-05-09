@@ -5,25 +5,44 @@
        
         <div class="ui-g"  style="text-align: center;background-color: blueviolet">
           <div class="ui-g-12 banner stroke" style="font-size: 350%" >Bienvenido a Sala de juegos</div> 
-          <div class="ui-g-12" style="background: black"></div>  
-          <div class="container" style="margin-top: 5%;margin-bottom: 5%;">           
+          <div class="ui-g-12" style="background: black"></div>         
+          <div  class="container" style="margin-top: 5%;margin-bottom: 5%;">           
             <div class="ui-g ui-fluid">
               <div class="ui-g-6 ui-sm-12" style="font-size: 150%;background-color:black">
-                  <p-card>
-                      <p-header>
-                        Ya sos usuario?
-                      </p-header>
-                      Ingresa a tu cuenta para acceder a los juegos
-                      <p-dialog  autoAlign="true" width=100%  focusOnShow="false" header="Iniciar Sesión" [(visible)]="displayLogin">
-                        <app-login></app-login>
-                    </p-dialog>                
-                    
-                      <p-footer>
-                          
-                        <button mat-raised-button color="primary"  (click)="showLogin()"  label="Show">Iniciar Sesión</button>
-                      </p-footer>
-                  </p-card>
-              </div>
+                  <div [hidden]="logeado">
+                        <p-card>
+                                <p-header>
+                                  Sesion iniciada como : {{nombreUsuario}}
+                                </p-header>
+                               Tu sesion ya esta activa!!. Hace click aca para continuar al menu
+                                <p-dialog  autoAlign="true" width=100%  focusOnShow="false" header="Iniciar Sesión" [(visible)]="displayLogin">
+                                  <app-login></app-login>
+                              </p-dialog>                
+                              
+                                <p-footer>
+                                    
+                                  <button mat-raised-button color="primary"  (click)="showLogin()"  label="Show">Ir al menu</button>
+                                </p-footer>
+                            </p-card>
+                  </div>
+                  <div [hidden]="!logeado">
+                        <p-card>
+                                <p-header>
+                                  Ya sos usuario?
+                                </p-header>
+                                Ingresa a tu cuenta para acceder a los juegos
+                                <p-dialog  autoAlign="true" width=100%  focusOnShow="false" header="Iniciar Sesión" [(visible)]="displayLogin">
+                                  <app-login></app-login>
+                              </p-dialog>                
+                              
+                                <p-footer>
+                                    
+                                  <button mat-raised-button color="primary"  (click)="showLogin()"  label="Show">Iniciar Sesión</button>
+                                </p-footer>
+                            </p-card>
+                    </div>
+                 
+              </div>       
               <div class="ui-g-6  ui-sm-12"  style="font-size: 150%;background-color:black">
                   <p-card>
                       <p-header>

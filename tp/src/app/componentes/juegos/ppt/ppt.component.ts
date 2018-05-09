@@ -65,14 +65,14 @@ export class PptComponent implements OnInit {
         break;
     }
     switch (this.resultado) {
-      case "gano":
+      case "Ganó":
         this.ganadas++;
         this.puntos = (this.puntos+2);
         break;
-        case "perdio":
+        case "Perdió":
         this.perdidas++;        
         break;
-        case "empato":
+        case "Emaptó":
         this.empatadas++;
         this.puntos = (this.puntos+1);
         break;

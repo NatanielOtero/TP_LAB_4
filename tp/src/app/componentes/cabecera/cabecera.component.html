@@ -1,6 +1,6 @@
 <p-menubar [model]="items">
     <div>
-        <button pButton label="Estadisticas"></button>
+        <button pButton (click)="est()" label="Estadisticas"></button>
         <button pButton label="Logout" (click)="salir()" icon="fa-sign-out"></button>        
     </div>
 </p-menubar>

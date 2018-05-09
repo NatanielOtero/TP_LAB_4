@@ -40,7 +40,7 @@ export class BlackjackComponent implements OnInit {
     
        
         this.resultado= this.juego.verificarJuego();
-        if(this.resultado == "Gano" || this.resultado =="Perdio")
+        if(this.resultado == "Ganó" || this.resultado =="Perdió")
         {
           this.corto = false;
           this.jugando = true;
@@ -85,7 +85,7 @@ export class BlackjackComponent implements OnInit {
     this.juego.jugar();
     this.juego.jugar();   
     this.resultado= this.juego.verificarJuego();
-    if(this.resultado == "Gano" || this.resultado =="Perdio")
+    if(this.resultado == "Ganó" || this.resultado =="Perdió")
     {
       this.corto = false;
       this.jugando = true;

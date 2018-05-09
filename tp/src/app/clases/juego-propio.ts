@@ -6,6 +6,7 @@ export class JuegoPropio extends Juego {
     public cartas: number[];   
     public valorUser : number;
     public numero : number;
+    public resultado : any;
 
     constructor(nombre?: any, gano?: any, jugador?: any) {
         super("BlackJack", gano, jugador);
@@ -39,14 +40,20 @@ export class JuegoPropio extends Juego {
                 this.numero = Math.floor((Math.random() * 12) + 1);
                 if(this.valorUser + this.numero == 21)
                 {
-                    return "Mal, hubieras ganado";
+                    this.resultado = "Mal, hubieras ganado";
+                     return this.resultado;
+                   
                 }
                 else{
                     if(this.valorUser + this.numero > 21){
-                        return "Bien, hubieras perdido";
+                        this.resultado = "Bien, hubieras perdido";
+                        return this.resultado;
+                      
                     }
                     else{
-                        return "Mal, podias seguir";
+                        this.resultado = "Mal, podias seguir";
+                        return this.resultado;
+                        
                     }
                 }
             }     
@@ -60,11 +67,14 @@ export class JuegoPropio extends Juego {
             this.valorUser  += this.cartas[i];
             if(this.valorUser == 21)
             {
-                return "Gano";
+                this.resultado = "Ganó";
+                return this.resultado;
             }
             if(this.valorUser > 21)
             {
-                return "Perdio";
+                this.resultado = "Perdió";
+                return this.resultado;
+                
             }
         }     
         

@@ -61,7 +61,7 @@
     <p-dialog  [closable]="true" header="Fin del juego" [(visible)]="!corto">
       
                     
-            <div style="width:95%" [hidden]="resultado != 'Gano'" >
+            <div style="width:95%" [hidden]="resultado != 'Ganó'" >
                 <div class="alert alert-success animated shake">
                         <strong>{{resultado}}!</strong> 
                          <div [hidden]="nuevo">
@@ -79,14 +79,14 @@
                         
                     </ng-container>
                </div>
-               <div  style="width:95%;font-size: 90%"  [hidden]="resultado == 'Gano' || resultado == 'Perdio'" class="alert alert-info animated shake">
+               <div  style="width:95%;font-size: 90%"  [hidden]="resultado == 'Ganó' || resultado == 'Perdió'" class="alert alert-info animated shake">
                     <strong>{{resultado}}!</strong><br> <div [hidden]="nuevo">
                             <button mat-button (click)="jugar()">Nuevo juego ?</button>
                         </div>   <br>
                      <img src="assets/images/{{juego.numero}}.jpg" alt="">
 
                </div>
-               <div style="width:95%" [hidden]="resultado != 'Perdio'" class="alert alert-danger animated shake">
+               <div style="width:95%" [hidden]="resultado != 'Perdió'" class="alert alert-danger animated shake">
                     <strong>{{resultado}}!</strong> <div [hidden]="nuevo">
                             <button mat-button (click)="jugar()">Nuevo juego ?</button>
                         </div>   

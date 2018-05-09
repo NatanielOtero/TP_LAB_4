@@ -11,6 +11,7 @@ import { JuegoPropio } from '../clases/juego-propio';
 import { JuegoPiedraPapelTijera } from '../clases/juego-piedra-papel-tijera';
 import { JuegoAnagrama } from '../clases/juego-anagrama';
 import { JuegoAgilidad } from '../clases/juego-agilidad';
+import { JuegoTateti } from '../clases/juego-tateti';
 
 @Injectable()
 export class MiFirebaseService {
@@ -105,14 +106,26 @@ export class MiFirebaseService {
 
   traerDatosBlackjack()
   {
-      this.respuestasAFL = this.afDB.list("/resultadosReaccionVisual");
+      this.respuestasAFL = this.afDB.list("/resultadosBlackJack");
       this.respuestasObservable = this.respuestasAFL.valueChanges();
       return this.respuestasObservable;
   }
 
   guardarBlackjack(juego : JuegoPropio)
   {
-    const resultadosReaccionVisual = this.afDB.list("/resultadosBlackJack/");
-    resultadosReaccionVisual.push(juego);
+    const resultadosBJ = this.afDB.list("/resultadosBlackJack/");
+    resultadosBJ.push(juego);
+  }
+  traerDatosTateti()
+  {
+      this.respuestasAFL = this.afDB.list("/resultadosTateti");
+      this.respuestasObservable = this.respuestasAFL.valueChanges();
+      return this.respuestasObservable;
+  }
+
+  guardarPuntuaciónTateti(juegoTateti : JuegoTateti)
+  {
+    const resultadosTateti = this.afDB.list("/resultadosTateti/");
+    resultadosTateti.push(juegoTateti);
   }
 }

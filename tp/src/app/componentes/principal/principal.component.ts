@@ -10,13 +10,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PrincipalComponent implements OnInit {
   displayLogin: boolean = false;
   displayRegistro: boolean = false;
+  logeado : boolean = true;
   usuarioLogeado : boolean = false;
   nombreUsuario : string;
   constructor(public auth : MiFirebaseService,public routes : ActivatedRoute,public router : Router) { }
  
 
     showLogin() {
+      if(this.logeado == false)
+      {
+          this.router.navigate(['/Menu']);
+      }
+      else
+      {
         this.displayLogin = true;
+      }
+        
     }
     showRegistro() {
       this.displayRegistro = true;
@@ -24,8 +33,12 @@ export class PrincipalComponent implements OnInit {
   ngOnInit() {
     this.auth.getAuth().subscribe( user =>{
       if(user)
-      {
-        this.router.navigate(['/Menu']);       
+      { 
+          let mail = user.email;
+          let splitted = mail.split("@",1);
+          this.nombreUsuario = splitted[0];
+   
+        this.logeado = false;    
       }
       else
       {
